@@ -2,16 +2,15 @@
 <html>
     <head>
         <title>Fakea</title>
-        <link rel="stylesheet" href="css/IndexStyle.css">
     </head>
     <body>
         <h1>Welcome to Fakea</h1>
-        <p id="subtitle">What would you like to do?</p>
-        
-            <div class="buttons">
-                <a href="Login.php">Login</a>
-                <a href="Register.php">Register</a>
-            </div>
-
+        <p>What would you like to do?</p>
+        <p>
+            <a href="Login.php">Login</a>
+        </p>
+        <p>
+            <a href="Register.php">Register</a>
+        </p>
     </body>
 </html>

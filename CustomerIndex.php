@@ -15,18 +15,18 @@
 <html>
     <head>
         <title>Customer Home</title>
-        <link rel="stylesheet" href="css/CustomerIndexStyle.css">
     </head>
     <body>
         <h1>Welcome <?php echo $row['CustomerName']; ?></h1>
-
-        <p id="subtitle">What would you like to do?</p>
-
-        <div class="buttons">
+        <p>What would you like to do?</p>
+        <p>
             <a href="Order.php">Order Furniture</a>    
+        </p>
+        <p>
             <a href="ViewOrders.php">View Orders</a>
+        </p>
+        <p>
             <a href="Logout.php">Logout</a>
-        </div>
-
+        </p>
     </body>
 </html>

@@ -1,33 +1,24 @@
 <?php
     session_start();
     require_once('connect.php');
-
-    if( isset($_REQUEST['CustomerOrderID']) ){
-        $CustomerOrderID = $_REQUEST['CustomerOrderID'];
-    }else{
-        $CustomerOrderID = '';
-    } 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Make an Order</title>
-        <link rel="stylesheet" href="css/OrderStyle.css">
     </head>
     <body>
-        <h1 id="page-title">Make an Order:</h1>
-        
-        <div class="action-buttons">
-            <a class="action-button" href="CustomerIndex.php">
-                <ion-icon name="arrow-round-back"></ion-icon>
-            </a>
-            <a class="action-button" id="cancel-button" href="DeleteOrder.php?CustomerOrderID=<?php echo $CustomerOrderID; ?>">
-                <ion-icon name="close"></ion-icon>
-            </a>
-        </div>
-
+        <h1>Make an Order:</h1>
+        <a href="CustomerIndex.php">Back</a>
+        <?php 
+            if( isset($_REQUEST['CustomerOrderID']) ){
+                $CustomerOrderID = $_REQUEST['CustomerOrderID'];
+            }else{
+                $CustomerOrderID = '';
+            } 
+        ?>
         <form action="OrderScript.php?CustomerOrderID=<?php echo $CustomerOrderID; ?>" method="post">
-        <table>
+        <table border="1" cellpadding="10">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -103,8 +94,5 @@
             </tbody>
         </table>
         </form>
-
-        <!-- Ionicons Import -->
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     </body>
 </html>

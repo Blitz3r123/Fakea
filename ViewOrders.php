@@ -7,7 +7,6 @@
 <html>
     <head>
         <title>View Order</title>
-        <link rel="stylesheet" href="ViewOrdersStyle.css">
     </head>
     <body>
         <h1>Your orders:</h1>
