@@ -15,6 +15,12 @@ CREATE DATABASE Fakea;
 --    └--------------------------┘    ---------------------------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------------------------------------------
+CREATE TABLE Admin(
+	AdminID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    AdminUsername VARCHAR(255),
+    AdminPassword VARCHAR(255)
+)
+
 CREATE TABLE Customer(
 	CustomerID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     CustomerName VARCHAR(255),
@@ -56,6 +62,20 @@ CREATE TABLE CustomerOrderLine(
 --    └--------------------------┘    ---------------------------------------------------------------------------------
 
 -- --------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO Admin(
+    AdminUsername,
+    AdminPassword
+)
+VALUES
+(
+    'admin1',
+    'password'
+),
+(
+    'admin2',
+    'password'
+)
 
 INSERT INTO Customer(
     CustomerName, 
