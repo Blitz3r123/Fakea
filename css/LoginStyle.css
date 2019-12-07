@@ -74,3 +74,9 @@ form{
     color: #34699e;
     outline: 1px solid #34699e;
 }
+
+.error-message{
+    /* outline: 1px solid black; */
+    color: red;
+    text-align: center;
+}

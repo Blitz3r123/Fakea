@@ -14,7 +14,7 @@
 
         $_SESSION['AdminID'] = $row['AdminID'];
 
-        echo "<script>window.location = 'CustomerIndex.php';</script>";
+        echo "<script>window.location = 'AdminIndex.php';</script>";
     }
 
 ?>

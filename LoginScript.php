@@ -2,8 +2,8 @@
     session_start();
     require_once('connect.php');
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     $sql = "SELECT * FROM Customer WHERE Username = '" .$username. "' AND Password = '" .$password. "'";
 
@@ -15,6 +15,12 @@
         $_SESSION['CustomerID'] = $row['CustomerID'];
 
         echo "<script>window.location = 'CustomerIndex.php';</script>";
+    }else{
+        // Login Incorrect
+
+        $_SESSION['LoginError'] = "Incorrect username or password";
+
+        echo "<script>window.location = 'Login.php';</script>";
     }
 
 ?>
