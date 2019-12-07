@@ -81,9 +81,13 @@
                         <select name="furnitureName" required>
                             <option value="" selected disabled>Select Furniture</option>
                             <?php
-                                $sql = "SELECT * FROM FURNITURE";
+                                $sql = "SELECT * FROM Furniture";
 
                                 $result = mysqli_query($conn, $sql);
+
+                                if(!$result){
+                                    echo mysqli_error($conn);
+                                }
 
                                 if(mysqli_num_rows($result) > 0){
                                     while($row = mysqli_fetch_array($result)){

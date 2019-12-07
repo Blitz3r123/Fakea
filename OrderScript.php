@@ -20,7 +20,7 @@
     if( isset($_REQUEST['CustomerOrderID']) && $_REQUEST['CustomerOrderID'] == '' ){
         // Order doesn't exist
         
-        $sql = "INSERT INTO CustomerOrder(CustomerID, Date) VALUES(" .$CustomerID. ", " .$today. ")";
+        $sql = "INSERT INTO CustomerOrder(CustomerID, Date) VALUES(" .$CustomerID. ", '" .$today. "')";
 
         if(mysqli_query($conn, $sql)){
             $CustomerOrderID = mysqli_insert_id($conn);
