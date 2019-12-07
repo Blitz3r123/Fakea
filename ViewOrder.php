@@ -46,7 +46,7 @@
 
                     $totalPrice += $row['Price'] * $row['Quantity'];
                 }
-                echo "<tr><td colspan='3'></td><td>Total</td><td>&pound;" .$totalPrice. "</td></tr>";
+                echo "<tr><td colspan='3'></td><td>Total</td><td>" .money_format('&pound;%n', $totalPrice). "</td></tr>";
                 echo "</tbody>";
                 echo "</table>";
             }else{

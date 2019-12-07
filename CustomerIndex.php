@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('LoginCheck.php');
     require_once('connect.php');
     
     $CustomerID = $_SESSION['CustomerID'];

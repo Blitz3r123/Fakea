@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('LoginCheck.php');
     require_once('connect.php');
 
     // Check if this an existing order
@@ -79,7 +80,7 @@
                     <td><?php 
                         // Check if the $total variable has a value then display it
                         if(isset($total)){
-                            echo '&pound;' . $total;
+                            echo money_format('&pound;%n', $total);
                         }else{
                             echo 0;
                         }

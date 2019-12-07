@@ -54,7 +54,7 @@
                         }
                         echo "</a></td>";
 
-                        echo '<td>&pound;' .$total. '</td>';
+                        echo '<td>' .money_format('&pound;%n', $total). '</td>';
 
                         echo '<td>
                                 <a href="DeleteOrder.php?CustomerOrderID=' .$value. '">Delete</a>
