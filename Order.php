@@ -2,6 +2,7 @@
     session_start();
     require_once('connect.php');
 
+    // Check if this an existing order
     if( isset($_REQUEST['CustomerOrderID']) ){
         $CustomerOrderID = $_REQUEST['CustomerOrderID'];
     }else{
@@ -39,16 +40,24 @@
             </thead>
             <tbody>
             <?php
+                // Check order exists
                 if( isset($_REQUEST['CustomerOrderID']) ){
+
+                    /*
+                        Display all the furniture in the current order if there are any
+
+                        We check for an order by posting CustomerOrderID to this page from OrderScript.php
+                    */
+
                     $sql = "SELECT * FROM CustomerOrderLine, Furniture WHERE CustomerOrderLine.FurnitureID = Furniture.FurnitureID AND CustomerOrderID = " . $_REQUEST['CustomerOrderID'];
 
                     $result = mysqli_query($conn, $sql);
 
                     $total = 0;
-
+                    // Check to see if any data has come back
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_array($result)){
-                            
+                            // Calculate total cost of all furniture in the order
                             $total += $row['Price'] * $row['Quantity'];
 
                             echo '
@@ -68,6 +77,7 @@
                     <td colspan="2"></td>
                     <td colspan="1">Total:</td>
                     <td><?php 
+                        // Check if the $total variable has a value then display it
                         if(isset($total)){
                             echo '&pound;' . $total;
                         }else{
@@ -81,13 +91,12 @@
                         <select name="furnitureName" required>
                             <option value="" selected disabled>Select Furniture</option>
                             <?php
+                                /* 
+                                    Display all furniture into a drop down list
+                                */
                                 $sql = "SELECT * FROM Furniture";
 
                                 $result = mysqli_query($conn, $sql);
-
-                                if(!$result){
-                                    echo mysqli_error($conn);
-                                }
 
                                 if(mysqli_num_rows($result) > 0){
                                     while($row = mysqli_fetch_array($result)){
