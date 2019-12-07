@@ -45,3 +45,11 @@ h1{
     color: #34699e;
     background-color: white;
 }
+
+.admin-login-button{
+    /* outline: 1px solid black; */
+    margin-top: 30vh !important;
+    background-color: #444 !important;
+    text-decoration: underline !important;
+    color: #ccc !important;
+}

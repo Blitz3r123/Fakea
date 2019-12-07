@@ -11,6 +11,7 @@
             <div class="buttons">
                 <a href="Login.php">Login</a>
                 <a href="Register.php">Register</a>
+                <a href="AdminLogin.php" class="admin-login-button">Admin Login</a>
             </div>
 
     </body>
