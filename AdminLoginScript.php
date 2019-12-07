@@ -15,6 +15,12 @@
         $_SESSION['AdminID'] = $row['AdminID'];
 
         echo "<script>window.location = 'AdminIndex.php';</script>";
+    }else{
+        // Login Incorrect
+
+        $_SESSION['LoginError'] = "Incorrect username or password";
+
+        echo "<script>window.location = 'AdminLogin.php';</script>";
     }
 
 ?>

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +13,15 @@
 
             <form action="AdminLoginScript.php" method="post">
             
+                <p class="error-message">
+                    <?php
+                        if(isset($_SESSION['LoginError'])){
+                            echo $_SESSION['LoginError'];
+                            unset($_SESSION['LoginError']);
+                        }
+                    ?>
+                </p>
+
                 <p class="back-button">
                     <a href="index.php"><ion-icon name="arrow-round-back"></ion-icon></a>
                 </p>
